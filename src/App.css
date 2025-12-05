@@ -1,0 +1,561 @@
+/* ========================
+   Global Reset & Defaults
+   ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ========================
+   Container & Layout
+   ======================== */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center; /* center horizontally */
+  width: 100%;
+}
+
+header, footer {
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center header/footer content */
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center; /* horizontally center main content */
+  align-items: center; /* vertically center main content */
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ========================
+   Header Nav
+   ======================== */
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ff3c6e;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #e0315d;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   Typography
+   ======================== */
+h1, h2, h3, h4 {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+}
+
+p {
+  color: #cfcfcf;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ========================
+   Links & Buttons
+   ======================== */
+a.button, button {
+  display: inline-block;
+  background-color: #ff3c6e;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+a.button:hover, button:hover {
+  background-color: #e0315d;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   Forms & Inputs
+   ======================== */
+input, textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888888;
+}
+
+/* ========================
+   Cards & Panels
+   ======================== */
+.card {
+  background-color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  max-width: 400px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================
+   Grid Layouts
+   ======================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ========================
+   Footer
+   ======================== */
+footer p {
+  color: #888888;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ========================
+   Utility Classes
+   ======================== */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* ========================
+   Login & Register Pages
+   ======================== */
+.login-page, .register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.login-card, .register-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+/* ========================
+   Profile Page
+   ======================== */
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  width: 100%;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  padding: 5px;
+}
+
+.profile-info h2 {
+  margin-bottom: 0.3rem;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+/* Stats Row */
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.profile-stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+/* Wallet Section */
+.wallet {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.wallet input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #1f1f1f;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.wallet button {
+  width: 100%;
+  padding: 0.6rem 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff3c6e;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wallet button:hover {
+  background-color: #e0315d;
+}
+
+.withdraw-message {
+  margin-top: 0.5rem;
+  color: lightgreen;
+  text-align: center;
+}
+
+/* Posts Grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.post-placeholder {
+  background-color: #1f1f1f;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+/* ========================
+   Responsive adjustments
+   ======================== */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== Global Profile Styles ===== */
+
+.profile-page {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #111;
+}
+
+.profile-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profile-info {
+  margin-left: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.wallet, .subscription-mode, .subscription-price {
+  margin-top: 30px;
+}
+
+.posts-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.post-placeholder {
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background-color: #111;
+  border: 1px solid #ff69b4;
+  border-radius: 8px;
+  min-width: 140px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  color: #ff69b4;
+  border-bottom: 1px solid #ff69b4;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #222;
+}
+/* /* Default desktop menu */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* prevent stacking */
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap; /* never stack */
+}
+
+.navbar-search-container {
+  flex: 1 1 200px; /* allow shrinking on small screens */
+  min-width: 120px;
+  max-width: 300px;
+}
+
+.navbar-menu.visible {
+  display: flex; /* only toggle visibility, not stacking */
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* allow scrolling horizontally if needed */
+  }
+  .navbar-menu::-webkit-scrollbar {
+    display: none; /* hide horizontal scrollbar */
+  }
+}
+
+/* Upload button */
+.navbar-upload-button {
+  display: inline-block;
+  color: #ff3c6e;         /* text color only */
+  padding: 0.6rem 1.2rem; /* optional spacing */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-weight: 500;
+  background: transparent; /* no background */
+  border: none;            /* no border */
+}
+
+.navbar-upload-button:hover {
+  transform: translateY(-2px); /* pop effect */
+  color: #e0315d;              /* text color change on hover */
+}
+
+/* Icon wrapper for messages & notifications */
+.navbar-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Tooltip for Messenger */
+.navbar-tooltip {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.navbar-icon-wrapper:hover .navbar-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Notification & Message badge */
+.navbar-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff3c6e;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* Dropdowns (if you ever want to use them) */
+.navbar-hover-dropdown {
+  position: relative;
+}
+
+.navbar-hover-dropdown .navbar-dropdown {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background-color: #111;
+  border: 1px solid #ff69b4;
+  border-radius: 8px;
+  min-width: 140px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  z-index: 10;
+}
+
+.navbar-hover-dropdown:hover .navbar-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
